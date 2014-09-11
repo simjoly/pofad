@@ -1,0 +1,44 @@
+begin organisms;
+    dimensions Norg=39;
+    OrgLabels
+blanda160
+blanda326
+blanda365
+blanda421
+blanda462
+blanda528
+blanda567
+blanda652
+blanda1214
+blanda1219
+blanda1236
+blanda98016
+foliolosa699
+foliolosa795
+gymnocarpa543
+gymnocarpa751
+gymnocarpa767
+multiflora302
+nitida570
+nitida604
+nitida675
+nitida812
+palustris168
+palustris304
+palustris317
+palustris331
+palustris386
+palustris581
+pisocarpa774
+pisocarpa847
+setigera298
+woodsii4
+woodsii492
+woodsii498
+woodsii700
+woodsii733
+woodsii741
+woodsii800
+woodsii807
+;
+end;

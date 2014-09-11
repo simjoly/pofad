@@ -1,0 +1,82 @@
+# make file for pofad version 1.07
+
+OBJS = GenFunctions.obj information.obj nexusdata.obj organismsdata.obj ReadNexusFile.obj pofad.obj 
+BOBJS=c0x32.obj    
+BLIBS=import32.lib cw32.lib
+CFLAGS = -N -v -w -w-sig
+#option: Use "-wsig" in the CFLAGS to have warnings about possible losses of significant digits.
+CC = bcc32 -Ic:\Borland\bcc55\include -Lc:\Borland\bcc55\Lib
+
+#Folder containning binairies of the program
+EXEDIR = ..\bin
+
+a1b2c3d4:
+	@echo " "
+	@echo " "
+	@echo " To use the POFAD version 1.07 Makefile, type"
+	@echo " "
+	@echo "     make install       to compile POFAD vers. 1.06 and then install the "
+	@echo "                          executables in $(EXEDIR), then remove the object"
+	@echo "                          files to save space"
+	@echo "     make all           to compile the whole package and leaving the executables"
+	@echo "                          in the current directoty and leaving the object files"
+	@echo "     make put           to move the executables into $(EXEDIR)"
+	@echo "     make clean         to remove all object files and executables from the"
+	@echo "                          current directory"
+	@echo "     make pofad         to compile pofad and leaving the executables in the"
+	@echo "                          current directoty and leaving the object files"
+	@echo " "
+
+introduce:
+	@echo " "
+	@echo "Building POFAD version 1.07"
+	@echo " "
+
+all:        introduce pofad
+	@echo " "
+	@echo "Finished compiling."
+
+install:        all put clean
+	@echo "Done compiling POFAD."
+	@echo " "
+
+put:
+	@echo " "
+	@echo "Moving POFAD version 1.07 binaries in $(EXEDIR)"
+	@copy *.exe $(EXEDIR)
+	@echo " "
+
+clean:
+	@echo "Deleting object files ..."
+	@echo " "
+	del *.obj *.tds *.res *.ilc *.ild *.ilf *.ils *.map
+	del *.exe
+	@echo " "
+
+pofad:	pofad.exe
+
+pofad.exe: $(OBJS) pofad.res
+	Ilink32 $(OBJS) $(BOBJS), pofad.exe,, $(BLIBS) -Lc:\Borland\bcc55\Lib,, pofad.res
+
+pofad.obj: pofad.h 
+	$(CC) $(CFLAGS) -c pofad.cpp
+
+ReadNexusFile.obj: ReadNexusFile.h
+	$(CC) $(CFLAGS) -c ReadNexusFile.cpp
+
+organismsdata.obj: organismsdata.h
+	$(CC) $(CFLAGS) -c organismsdata.cpp 
+
+nexusdata.obj: nexusdata.h
+	$(CC) $(CFLAGS) -c nexusdata.cpp
+
+information.obj: information.h
+	$(CC) $(CFLAGS) -c information.cpp
+
+GenFunctions.obj: GenFunctions.h
+	$(CC) $(CFLAGS) -c GenFunctions.cpp
+
+pofad.res:	icon/pofad.rc
+	brcc32 icon/pofad.rc -fopofad.res
+
+

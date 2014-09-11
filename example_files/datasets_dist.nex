@@ -1,0 +1,8 @@
+begin datasets;
+    dimensions Ndatasets=3;
+    DatasetsLabels
+gapdh_dist.nex
+tpi_dist.nex
+ms_dist.nex
+;
+end;

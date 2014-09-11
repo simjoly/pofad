@@ -1,0 +1,8 @@
+begin datasets;
+    dimensions Ndatasets=3;
+    DatasetsLabels
+gapdh_dna.nex
+tpi_dna.nex
+ms_dna.nex
+;
+end;

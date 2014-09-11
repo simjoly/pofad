@@ -1,0 +1,54 @@
+#nexus
+
+Begin organisms;
+    dimensions norg=46;
+    orglabels
+    
+    blanda160      
+    blanda326      
+    blanda365      
+    blanda421      
+    blanda462      
+    blanda528      
+    blanda567      
+    blanda652      
+    blanda1214       
+    blanda1219       
+    blanda1236     
+    blanda98016    
+    foliolosa699   
+    foliolosa795   
+    foliolosa855     
+    gymnocarpa543    
+    gymnocarpa751  
+    gymnocarpa767    
+    gymnocarpa866  
+    gymnocarpa868  
+    nitida570      
+    nitida604      
+    nitida675      
+    nitida812      
+    palustris168   
+    palustris304   
+    palustris317   
+    palustris331     
+    palustris386     
+    palustris581     
+    pisocarpa774   
+    pisocarpa847   
+    pisocarpa869     
+    pisocarpa870   
+    woodsii4         
+    woodsii492       
+    woodsii498     
+    woodsii536     
+    woodsii700     
+    woodsii733     
+    woodsii741     
+    woodsii794     
+    woodsii800       
+    woodsii807       
+    multiflora302  
+    setigera298   
+    ;
+end;   
